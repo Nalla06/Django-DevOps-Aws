@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image</title>
+</head>
+<body>
+    <h1>Upload Image</h1>
+    <form action="{% url 'image_upload' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="image_file">Choose an image file:</label>
+        <input type="file" name="image_file" id="image_file">
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if image_url %}
+        <p>File uploaded at: <a href="{{ image_url }}">{{ image_url }}</a></p>
+    {% endif %}
+</body>
+</html>
