@@ -41,7 +41,7 @@ django-on-docker
 
 ```
 
-## Steps to Deploy Django Application with Docker
+## Steps followed to Deploy Django Application with Docker
 
 ### 1. Create Dockerfile for Development
 - Created a `Dockerfile` for the development environment inside the `app` directory.
