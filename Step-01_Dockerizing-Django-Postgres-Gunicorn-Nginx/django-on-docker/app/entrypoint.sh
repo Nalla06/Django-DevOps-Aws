@@ -1,22 +1,21 @@
 #!/bin/bash
 
-# Check if DATABASE_URL is set to use PostgreSQL
-if [ -z "$DATABASE_URL" ]; then
-  echo "Running without waiting for PostgreSQL..."
-else
-  # Wait for PostgreSQL to be ready
-  echo "Waiting for postgres..."
-  while ! nc -z db 5432; do
-    sleep 1
-  done
-  echo "PostgreSQL started"
-fi
+# Exit immediately if a command exits with a non-zero status.
+set -e
+
+# Wait for PostgreSQL to be available
+until pg_isready -h db -p 5432; do
+  echo "Waiting for PostgreSQL to be available..."
+  sleep 2
+done
 
 # Apply database migrations
-python manage.py migrate --noinput
+python manage.py migrate
 
-# Collect static files (if needed)
-# python manage.py collectstatic --noinput
+# Collect static files
+python manage.py collectstatic --noinput
 
-# Start the development server
+# Start the Django application
+gunicorn hello_django.wsgi:application --bind 0.0.0.0:8000
+
 exec "$@"

@@ -8,18 +8,20 @@ ENV PYTHONUNBUFFERED=1
 # Set work directory
 WORKDIR /usr/src/app
 
-# Install dependencies
-COPY requirements.txt /usr/src/app/
-RUN pip install -r requirements.txt
-
-# Install netcat-openbsd
+# Install system dependencies
 RUN apt-get update && apt-get install -y netcat-openbsd
 
+# Install dependencies
+RUN pip install --upgrade pip
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+# Copy entrypoint.sh
+COPY entrypoint.sh /usr/src/app/entrypoint.sh
+RUN chmod +x /usr/src/app/entrypoint.sh
+
 # Copy project
-COPY . /usr/src/app/
+COPY . .
 
-# Expose port 8000
-EXPOSE 8000
-
-# Run the Django development server
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Run entrypoint.sh
+ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
