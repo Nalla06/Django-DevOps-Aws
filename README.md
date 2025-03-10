@@ -73,12 +73,12 @@ Django-Devops-Aws/
 
 ## Technologies Used
 
-. Backend: Django, Gunicorn
-. Containerization: Docker, Docker Compose
-. Infrastructure as Code: Terraform
-. Cloud Provider: AWS (ECS, ALB, RDS, S3, CloudFront, WAF)
-. Security: AWS WAF, Let's Encrypt SSL
-. CI/CD: GitHub Actions
+1. Backend: Django, Gunicorn
+2. Containerization: Docker, Docker Compose
+3. Infrastructure as Code: Terraform
+4. Cloud Provider: AWS (ECS, ALB, RDS, S3, CloudFront, WAF)
+5. Security: AWS WAF, Let's Encrypt SSL
+6. CI/CD: GitHub Actions
 
 
 🎯 Future Enhancements
