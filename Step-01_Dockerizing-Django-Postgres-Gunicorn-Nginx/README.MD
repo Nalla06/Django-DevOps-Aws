@@ -85,3 +85,11 @@ django-on-docker
 ### 11. Verify Application
 - Accessed the application in the browser to verify that it was running correctly.
 - Checked logs and configurations to troubleshoot any issues encountered.
+
+## Images
+Here are some images related to the deployment process:
+
+![Image 1](images/image-01.png)
+![Image 2](images/image-02.png)
+![Image 3](images/image-03.png)
+![Image 4](images/image-04.png)
