@@ -86,6 +86,9 @@ django-on-docker
 - Accessed the application in the browser to verify that it was running correctly.
 - Checked logs and configurations to troubleshoot any issues encountered.
 
+
+By following these steps, we can successfully deploy our Django application using Docker, Docker Compose, PostgreSQL, Gunicorn, and Nginx. This setup ensures that your application is containerized and can be easily managed and scaled in a production environment.
+
 ## Images
 Here are some images related to the deployment process:
 
@@ -93,3 +96,12 @@ Here are some images related to the deployment process:
 ![Image 2](images/image-02.png).
 ![Image 3](images/image-03.png).
 ![Image 4](images/image-04.png).
+
+
+## Steps for Next Implementation
+
+### Step 2: Storing Static & Media Files on AWS S3
+- Configure Django to store static and media files on AWS S3.
+- Update Django settings to use `django-storages` and `boto3` for S3 integration.
+- Set up AWS S3 buckets for static and media files.
+- Ensure that the application can correctly upload and serve files from AWS S3.
