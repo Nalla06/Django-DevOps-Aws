@@ -116,7 +116,7 @@ If running Django behind NGINX, update its configuration to properly serve media
 
 ---
 
-## Docker Compose Commands
+## Docker Compose Commands used for this step
 
 ### Build and Start Containers
 ```bash
