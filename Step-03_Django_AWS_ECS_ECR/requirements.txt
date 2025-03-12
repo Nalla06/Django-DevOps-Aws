@@ -1,0 +1,3 @@
+Django
+gunicorn # production-ready HTTP server for running Django.
+psycopg2-binary==2.9.9

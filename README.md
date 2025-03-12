@@ -16,7 +16,7 @@ This repository covers the following **key DevOps concepts**:
 
 ```
 Django-Devops-Aws/
-│── dockerizing-django/          # Step 1: Containerizing Django with Postgres, Gunicorn & Nginx
+│── dockerizing-django/          # Step 1: Containerizing Django with Postgres,Gunicorn & Nginx
 │── aws-s3-static-media/         # Step 2: Storing Static & Media Files on AWS S3
 │── deploying-aws-ecs-terraform/ # Step 3: Deploying to AWS ECS with Terraform
 │── security-lets-encrypt-waf/   # Step 4 & 5: SSL & Web Application Firewall (WAF)
