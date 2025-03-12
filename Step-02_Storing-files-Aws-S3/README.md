@@ -24,133 +24,147 @@ This project demonstrates how to set up a Django application using Docker for bo
 
 # As upto here was covered in Step-01_Dockerizing-Django-Postgres-Gunicorn-Nginx
 Now here i am doing 
-# Build Docker containers
+# Docker Compose Commands
+
+## Build and Start Containers
+```bash
 docker-compose build
-
-# Start Docker containers in detached mode
 docker-compose up -d
+```
 
-# Stop Docker containers
+## Stop and Restart Containers
+```bash
 docker-compose down
-
-# Restart Docker containers
 docker-compose restart
+```
 
-# View logs from Docker containers
+## View Logs
+```bash
 docker-compose logs
-
-# View logs from a specific Docker container
+# Logs for a specific container
 docker-compose logs web
+```
 
-# Execute a command inside a running Docker container
+## Execute Commands Inside Containers
+```bash
 docker-compose exec web bash
-
-# Run Django management command inside a Docker container
+# Run Django management commands
 docker-compose exec web python manage.py <command>
+```
 
-# Collect static files
+## Collect Static Files
+```bash
 docker-compose exec web python manage.py collectstatic --noinput
+```
 
-# Check the status of Docker containers
+## Check Container Status
+```bash
 docker-compose ps
+```
 
-# Remove Docker containers, networks, volumes, and images created by `up`
+## Remove Containers, Networks, Volumes, and Images
+```bash
 docker-compose down --volumes --rmi all
-
-# Prune unused Docker images and containers
 docker system prune -a
+```
+
+---
 
 # Development Environment Commands
-# Build Docker containers for development
+
+## Build and Start Development Containers
+```bash
 docker-compose -f docker-compose.dev.yml build
-
-# Start Docker containers for development in detached mode
 docker-compose -f docker-compose.dev.yml up -d
+```
 
-# Start Docker containers for development with logs
-docker-compose -f docker-compose.dev.yml up
-
-# Stop Docker containers for development
+## Stop and Restart Development Containers
+```bash
 docker-compose -f docker-compose.dev.yml down
-
-# Restart Docker containers for development
 docker-compose -f docker-compose.dev.yml restart
+```
 
-# View logs from development Docker containers
+## View Development Logs
+```bash
 docker-compose -f docker-compose.dev.yml logs
-
-# View logs from a specific development Docker container
+# Logs for a specific container
 docker-compose -f docker-compose.dev.yml logs web
+```
 
-# Execute a command inside a running development Docker container
+## Execute Commands Inside Development Containers
+```bash
 docker-compose -f docker-compose.dev.yml exec web bash
-
-# Run Django management command inside a development Docker container
+# Run Django management commands
 docker-compose -f docker-compose.dev.yml exec web python manage.py <command>
+```
 
-# Create a superuser in development environment
+## Database and Static Files Management
+```bash
 docker-compose -f docker-compose.dev.yml exec web python manage.py createsuperuser
-
-# Make migrations in development environment
 docker-compose -f docker-compose.dev.yml exec web python manage.py makemigrations
-
-# Apply migrations in development environment
 docker-compose -f docker-compose.dev.yml exec web python manage.py migrate
-
-# Collect static files in development environment
 docker-compose -f docker-compose.dev.yml exec web python manage.py collectstatic --noinput
+```
 
-# Check the status of Docker containers in development
+## Check Development Container Status
+```bash
 docker-compose -f docker-compose.dev.yml ps
+```
+
+---
 
 # Production Environment Commands
-# Build Docker containers for production
+
+## Build and Start Production Containers
+```bash
 docker-compose -f docker-compose.prod.yml build
-
-# Start Docker containers for production in detached mode
 docker-compose -f docker-compose.prod.yml up -d
+```
 
-# Start Docker containers for production with logs
-docker-compose -f docker-compose.prod.yml up
-
-# Stop Docker containers for production
+## Stop and Restart Production Containers
+```bash
 docker-compose -f docker-compose.prod.yml down
-
-# Restart Docker containers for production
 docker-compose -f docker-compose.prod.yml restart
+```
 
-# View logs from production Docker containers
+## View Production Logs
+```bash
 docker-compose -f docker-compose.prod.yml logs
-
-# View logs from a specific production Docker container
+# Logs for a specific container
 docker-compose -f docker-compose.prod.yml logs web
+```
 
-# Execute a command inside a running production Docker container
+## Execute Commands Inside Production Containers
+```bash
 docker-compose -f docker-compose.prod.yml exec web bash
-
-# Run Django management command inside a production Docker container
+# Run Django management commands
 docker-compose -f docker-compose.prod.yml exec web python manage.py <command>
+```
 
-# Create a superuser in production environment
+## Database and Static Files Management in Production
+```bash
 docker-compose -f docker-compose.prod.yml exec web python manage.py createsuperuser
-
-# Make migrations in production environment
 docker-compose -f docker-compose.prod.yml exec web python manage.py makemigrations
-
-# Apply migrations in production environment
 docker-compose -f docker-compose.prod.yml exec web python manage.py migrate
-
-# Collect static files in production environment
 docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic --noinput
+```
 
-# Check the status of Docker containers in production
+## Check Production Container Status
+```bash
 docker-compose -f docker-compose.prod.yml ps
+```
 
-# Remove Docker containers, networks, volumes, and images created by `up` in production
+## Remove Production Containers, Networks, Volumes, and Images
+```bash
 docker-compose -f docker-compose.prod.yml down --volumes --rmi all
+```
 
-# Prune unused Docker images and containers
+## Prune Unused Docker Images and Containers
+```bash
 docker system prune -a
+```
+
+
 
 ## Images
 Here are some images related to the deployment process:
